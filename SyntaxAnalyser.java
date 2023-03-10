@@ -44,6 +44,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
      */
     @Override
     public void _statementPart_() throws IOException, CompilationException {
+        myGenerate.commenceNonterminal("statementPart");
         acceptTerminal(Token.beginSymbol);
         try {
             statementList();
@@ -51,7 +52,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
             throw new CompilationException(errorMethod("statementList()", nextToken), cause);
         }
         acceptTerminal(Token.endSymbol);
-        throw new UnsupportedOperationException("Unimplemented method '_statementPart_'");
+        myGenerate.finishNonterminal("statementPart");
     }
 
     /**
@@ -73,6 +74,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
     }
 
     private void statementList() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("statementList");
         try {
             statement();   
         } catch (CompilationException cause) {
@@ -87,9 +89,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
                 throw new CompilationException(errorMethod("statementList()", nextToken), cause);
             }
         }
+        myGenerate.finishNonterminal("statementList");
     }
 
     private void statement() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("statement");
         try {
             switch(nextToken.symbol) {
                 case Token.identifier:
@@ -117,9 +121,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
             } catch (CompilationException cause) {
                 throw new CompilationException(errorMethod("assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement()", nextToken), cause);
             }
+        myGenerate.finishNonterminal("statement");
     }
 
     private void assignment() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("assignment");
         acceptTerminal(Token.identifier);
         acceptTerminal(Token.becomesSymbol);
         if(nextToken.symbol == Token.stringConstant) {
@@ -131,9 +137,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
                 throw new CompilationException(errorMethod("expression()", nextToken), cause);
             }
         }
+        myGenerate.finishNonterminal("assignment");
     }
 
     private void ifStatement() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("ifStatement");
         acceptTerminal(Token.ifSymbol);
         try {
             condition();
@@ -155,9 +163,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
 
         acceptTerminal(Token.endSymbol);
         acceptTerminal(Token.ifSymbol);
+        myGenerate.finishNonterminal("ifStatement");
     }
 
     private void whileStatement() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("whileStatement");
         acceptTerminal(Token.whileSymbol);
         try {
             condition();  
@@ -172,9 +182,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         }
         acceptTerminal(Token.endSymbol);
         acceptTerminal(Token.loopSymbol);
+        myGenerate.finishNonterminal("whileStatement");
     }
 
     private void procedure() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("procedure");
         acceptTerminal(Token.callSymbol);
         acceptTerminal(Token.identifier);
         acceptTerminal(Token.leftParenthesis);
@@ -184,9 +196,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
             throw new CompilationException(errorMethod("argumentList()", nextToken), cause);
         }
         acceptTerminal(Token.rightParenthesis);
+        myGenerate.finishNonterminal("procedure");
     }
 
     private void untilStatement() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("untilStatement");
         acceptTerminal(Token.doSymbol);
         try {
             statementList();   
@@ -199,9 +213,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         } catch (CompilationException cause) {
             throw new CompilationException(errorMethod("condition()", nextToken), cause);
         }
+        myGenerate.finishNonterminal("untilStatement");
     }
 
     private void forStatement() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("forStatement");
         acceptTerminal(Token.forSymbol);
         acceptTerminal(Token.leftParenthesis);
         try {
@@ -230,10 +246,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         }
         acceptTerminal(Token.endSymbol);
         acceptTerminal(Token.loopSymbol);
-
+        myGenerate.finishNonterminal("forStatement");
     }
 
     private void argumentList() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("argumentList");
         acceptTerminal(Token.identifier);
 
         if(nextToken.symbol == Token.commaSymbol){
@@ -244,9 +261,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
                 throw new CompilationException(errorMethod("argumentList()", nextToken), cause);
             }
         }
+        myGenerate.finishNonterminal("argumentList");
     }
 
     private void condition() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("condition");
         acceptTerminal(Token.identifier);
 
         try {
@@ -268,10 +287,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
             default:
                 break;
         }
-
+        myGenerate.finishNonterminal("condition");
     }
 
     private void conditionOp() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("conditionOp");
         switch(nextToken.symbol){
             case Token.greaterThanSymbol:
             acceptTerminal(Token.greaterThanSymbol);
@@ -292,9 +312,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
             acceptTerminal(Token.lessEqualSymbol);
             break;
         }
+        myGenerate.finishNonterminal("conditionOp");
     }
 
     private void expression() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("expression");
         try {
             term();
 
@@ -306,9 +328,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         } catch (CompilationException cause) {
             throw new CompilationException(errorMethod("term()", nextToken), cause);
         }
+        myGenerate.finishNonterminal("expression");
     }
 
     private void term() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("term");
         try {
             factor();
 
@@ -320,9 +344,11 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         } catch (CompilationException cause) {
             throw new CompilationException(errorMethod("factor()", nextToken), cause);
         }
+        myGenerate.finishNonterminal("term");
     }
 
     private void factor() throws IOException, CompilationException{
+        myGenerate.commenceNonterminal("factor");
         try {
             switch(nextToken.symbol) {
                 case Token.identifier:
@@ -341,6 +367,6 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser{
         } catch (CompilationException cause) {
             throw new CompilationException(errorMethod("expression()", nextToken), cause);
         }
-        
+        myGenerate.finishNonterminal("factor");
     }
 }
