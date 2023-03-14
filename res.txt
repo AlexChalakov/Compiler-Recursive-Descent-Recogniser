@@ -1,0 +1,68 @@
+Compilation Exception
+	Caused by Token that was accepted is IDENTIFIER
+
+Compilation Exception
+	Caused by Error on line 11 in Programs Folder/program3 - Token expected: statementList() || Token accepted: EOF!
+
+	Caused by Error on line 11 in Programs Folder/program3 - Token expected: statementList() || Token accepted: EOF!
+
+	Caused by Error on line 11 in Programs Folder/program3 - Token expected: statementList() || Token accepted: EOF!
+
+	Caused by Error on line 11 in Programs Folder/program3 - Token expected: statement() || Token accepted: EOF!
+
+	Caused by Error on line 11 in Programs Folder/program3 - Token expected: assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement() || Token accepted: EOF!
+
+	Caused by Token that was accepted is EOF
+
+Compilation Exception
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statement() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statementList() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: statement() || Token accepted: end!
+
+	Caused by Error on line 7 in Programs Folder/program4 - Token expected: assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement() || Token accepted: end!
+
+	Caused by Error! Expected <assignment statement>, <if statement>,  <while statement>, <procedure statement>, <until statement> or <for statement>, but got a token that is end
+
+Compilation Exception
+	Caused by Error on line 7 in Programs Folder/program5 - Token expected: statementList() || Token accepted: ;!
+
+	Caused by Error on line 7 in Programs Folder/program5 - Token expected: statementList() || Token accepted: ;!
+
+	Caused by Error on line 7 in Programs Folder/program5 - Token expected: statementList() || Token accepted: ;!
+
+	Caused by Error on line 7 in Programs Folder/program5 - Token expected: statement() || Token accepted: ;!
+
+	Caused by Error on line 7 in Programs Folder/program5 - Token expected: assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement() || Token accepted: ;!
+
+	Caused by Token that was accepted is ;
+
+Compilation Exception
+	Caused by Error on line 4 in Programs Folder/program7 - Token expected: statementList() || Token accepted: else!
+
+	Caused by Error on line 4 in Programs Folder/program7 - Token expected: statementList() || Token accepted: else!
+
+	Caused by Error on line 4 in Programs Folder/program7 - Token expected: statementList() || Token accepted: else!
+
+	Caused by Error on line 4 in Programs Folder/program7 - Token expected: statement() || Token accepted: else!
+
+	Caused by Error on line 4 in Programs Folder/program7 - Token expected: assignment(), ifStatement(),  whileStatement(), procedure(), untilStatement() or forStatement() || Token accepted: else!
+
+	Caused by Error! Expected <assignment statement>, <if statement>,  <while statement>, <procedure statement>, <until statement> or <for statement>, but got a token that is else
+
+Compilation Exception
+	Caused by Token that was accepted is call
+
